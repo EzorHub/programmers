@@ -1,0 +1,30 @@
+코드URL
+https://programmers.co.kr/learn/courses/30/lessons/42748
+--------------------------------------------------------
+
+	class Solution {
+	    public int[] solution(int[] array, int[][] commands) {
+			int[] answer = new int[commands.length];
+			int idx = 0;
+			int start = 0, end = 0, k = 0;
+			   
+		      for (int i = 0; i < commands.length; i++) {
+				 start = commands[i][0];
+				 end = commands[i][1];			
+				 k = commands[i][2];
+			
+				int[] temp = new int[end - start +1];
+	          
+				int n = 0;
+		        for(int j = start - 1 ; j < end ; j++) {
+		          temp[n++] = array[j];
+		        }
+					
+					
+		        Arrays.sort(temp);
+				answer[idx++] = temp[k-1];
+
+				}
+	        return answer;
+	    }
+	}
